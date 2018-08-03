@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="author" content="Atanas Kanchev">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Rental property ROI calculator</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.3.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.3.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.3.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.3.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.3.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4278118719667128",
+            enable_page_level_ads: true
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h1>Investment property net rental yield calculator</h1>
+        </div>
+        <div id="container">
+            <form id="input-form">
+                <section id="main-input" class="form-section">
+                    <label for="monthly-rent">Monthly rent</label>
+                    <input type="number" name="monthly-rent" id="monthly-rent" required>
+                    <label for="purchase-price">Purchase price</label>
+                    <input type="number" name="purchase-price" id="purchase-price" required>
+                </section>
+                <section id="finance-costs" class="form-section">
+                    <label for="mortgage-arr-fee">Mortagage arrangement fee</label>
+                    <input type="number" name="mortgage-arr-fee" id="mortgage-arr-fee">
+                    <label for="other-financial">Other finance</label>
+                    <input type="number" name="other-financial" id="other-financial">
+                </section>
+                <section id="purchase-costs" class="form-section">
+                    <label for="solicitor-fees">Solicitor fees</label>
+                    <input type="number" name="solicitor-fees" id="solicitor-fees">
+                    <label for="survey-fees">Survey fees</label>
+                    <input type="number" name="survey-fees" id="survey-fees">
+                    <label for="refurb-cost">Refurb cost</label>
+                    <input type="number" name="refurb-cost" id="refurb-cost">
+                    <label for="stamp-duty">Stamp duty</label>
+                    <input type="number" name="stamp-duty" id="stamp-duty">
+                    <label for="other-costs">Other Costs</label>
+                    <input type="number" name="other-costs" id="other-costs">
+                </section>
+                <section id="running-costs" class="form-section">
+                    <label for="letting-agent">Letting agent</label>
+                    <input type="number" name="letting-agent" id="letting-agent">
+                    <label for="insurance">Insurance</label>
+                    <input type="number" name="insurance" id="insurance">
+                    <label for="maintanance">Maintanance</label>
+                    <input type="number" name="maintanance" id="maintanance">
+                    <label for="ground-rent">Ground rent</label>
+                    <input type="number" name="ground-rent" id="ground-rent">
+                    <label for="service-charges">Service charges</label>
+                    <input type="number" name="service-charges" id="service-charges">
+                    <label for="void-period">Void reriod</label>
+                    <input type="number" name="void-period" id="void-period">
+                </section>
+                <section id="form-btns">
+                    <input class="btn" title="Reset form" type="reset" value="Reset">
+                    <input class="btn" title="Calculate ROI" type="submit" value="Calculate" id="submit-btn">
+                </section>
+            </form>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDoWHy11PqGCN5Z8h6XJW-aOmYfN_r3ftc",
+            authDomain: "inv-property-roi-calculator.firebaseapp.com",
+            databaseURL: "https://inv-property-roi-calculator.firebaseio.com",
+            projectId: "inv-property-roi-calculator",
+            storageBucket: "inv-property-roi-calculator.appspot.com",
+            messagingSenderId: "466152275064"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://unpkg.com/tippy.js@2.5.4/dist/tippy.all.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        tippy('.btn')
+    </script>
+</body>
+
+</html>
